@@ -6,7 +6,7 @@
 function initHamburgerMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navOverlay = document.querySelector('.nav-overlay');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .nav-cta-btn');
     const header = document.querySelector('.site-header');
     const closeBtn = document.querySelector('.menu-close-btn');
 

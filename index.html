@@ -42,7 +42,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="stylesheet" href="style.css?v=1.0.0">
+    <link rel="stylesheet" href="style.css?v=1.1.0">
     <link rel="icon" type="image/webp" href="images/logo.webp">
 
     <script type="application/ld+json">
@@ -143,6 +143,17 @@
                 <img src="images/logo.webp" alt="Villa Sole" width="60" height="60">
             </a>
 
+            <nav class="desktop-nav" aria-label="Navigazione principale">
+                <ul>
+                    <li><a href="#about-section">Chi Siamo</a></li>
+                    <li><a href="#services-section">Servizi</a></li>
+                    <li><a href="#house-section">La Struttura</a></li>
+                    <li><a href="#gallery-section">Galleria</a></li>
+                    <li><a href="#pricing-section">Prezzi</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+
             <button class="menu-toggle" aria-label="Apri menu di navigazione" aria-expanded="false">
                 <span class="menu-text">MENU</span>
                 <div class="hamburger-icon">
@@ -156,18 +167,16 @@
     <div class="nav-overlay" role="dialog" aria-label="Menu di navigazione">
         <button class="menu-close-btn" aria-label="Chiudi menu">&times;</button>
         <div class="nav-content">
-            <nav class="main-nav" aria-label="Navigazione principale">
+            <nav class="main-nav" aria-label="Menu mobile">
                 <ul>
-                    <li><a href="#about-section" class="nav-link"><span>01</span> Chi Siamo</a></li>
-                    <li><a href="#difference-section" class="nav-link"><span>02</span> Casa Famiglia</a></li>
-                    <li><a href="#services-section" class="nav-link"><span>03</span> Servizi</a></li>
-                    <li><a href="#house-section" class="nav-link"><span>04</span> La Casa</a></li>
-                    <li><a href="#daily-schedule" class="nav-link"><span>05</span> La Giornata</a></li>
-                    <li><a href="#gallery-section" class="nav-link"><span>06</span> Galleria</a></li>
-                    <li><a href="#pricing-section" class="nav-link"><span>07</span> Prezzi</a></li>
-                    <li><a href="#location-section" class="nav-link"><span>08</span> Dove Siamo</a></li>
-                    <li><a href="#contatti" class="nav-link"><span>09</span> Contatti</a></li>
+                    <li><a href="#about-section" class="nav-link">Chi Siamo</a></li>
+                    <li><a href="#services-section" class="nav-link">Servizi</a></li>
+                    <li><a href="#house-section" class="nav-link">La Struttura</a></li>
+                    <li><a href="#gallery-section" class="nav-link">Galleria</a></li>
+                    <li><a href="#pricing-section" class="nav-link">Prezzi</a></li>
+                    <li><a href="#contatti" class="nav-link">Contatti</a></li>
                 </ul>
+                <a href="#visit-section" class="nav-cta-btn">Prenota una visita</a>
             </nav>
             <div class="nav-footer">
                 <div class="nav-contact">
@@ -217,22 +226,49 @@
             <div class="hero-content">
                 <p class="hero-eyebrow">Casa Famiglia per Anziani</p>
                 <h1>Villa Sole: sempre accolti come a casa.</h1>
-                <h2>Un rifugio sereno nel cuore di Roasio. Accogliamo un massimo di 4 ospiti per garantire assistenza
-                    24 ore su 24, calore umano e una quotidianità ricca di affetto, lontana dalla solitudine.</h2>
+                <p class="hero-subtitle">Un rifugio sereno nel cuore di Roasio. Massimo 4 ospiti, assistenza H24 e calore umano — lontano dalla solitudine.</p>
                 <div class="hero-cta-group">
-                    <a href="#about-section" class="cta-button">Scopri la nostra Casa Famiglia</a>
-                    <a href="#contatti" class="cta-button cta-button-secondary">Prenota una visita</a>
+                    <a href="#visit-section" class="cta-button">Prenota una visita</a>
+                </div>
+                <p class="hero-text-link"><a href="#about-section">Scopri la nostra Casa Famiglia</a></p>
+            </div>
+        </section>
+
+        <!-- Problema: empatia con il target -->
+        <section id="problema-section" class="problema-section" aria-label="Capire le vostre preoccupazioni">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <h2 class="section-title-revamp">Sappiamo quanto pesa questa scelta.</h2>
+                    <p class="section-subtitle-revamp">Dietro ogni ricerca c'è una famiglia che desidera il meglio per un caro — e spesso un mix di emozioni difficili da affrontare da soli.</p>
+                </div>
+
+                <div class="problema-grid">
+                    <article class="problema-card" data-aos="fade-up">
+                        <div class="card-icon-lg"><i class="fas fa-heart-broken" aria-hidden="true"></i></div>
+                        <h3>La paura della solitudine</h3>
+                        <p>Nessuno vuole immaginare un genitore o un coniuge che passa le giornate in silenzio. La terza età non dovrebbe significare isolamento, ma presenza, ascolto e compagnia autentica ogni giorno.</p>
+                    </article>
+                    <article class="problema-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-icon-lg"><i class="fas fa-building" aria-hidden="true"></i></div>
+                        <h3>Il timore delle grandi strutture</h3>
+                        <p>Le RSA possono sembrare impersonali, affollate, lontane dal calore di casa. Cerchi un'alternativa intima, dove il tuo caro non sia un numero ma una persona con le sue abitudini e la sua storia.</p>
+                    </article>
+                    <article class="problema-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-icon-lg"><i class="fas fa-hands-helping" aria-hidden="true"></i></div>
+                        <h3>Il bisogno di calore umano</h3>
+                        <p>Non basta assistenza tecnica: serve affetto, rispetto e attenzione vera. A Villa Sole accogliamo solo 4 ospiti per garantire un rapporto umano, non istituzionale — come in famiglia.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Chi Siamo -->
+        <!-- Storia: perché esiste Villa Sole -->
         <section id="about-section" class="about-section-revamp">
             <div class="container">
                 <div class="about-grid">
                     <div class="about-text-col" data-aos="fade-right">
                         <h2 class="section-title-revamp">La nostra vocazione: cura, empatia e professionalità.</h2>
-                        <h3 class="section-subtitle-revamp">Sempre accolti come a casa.</h3>
+                        <h3 class="section-subtitle-revamp">Perché Villa Sole esiste.</h3>
 
                         <div class="about-body-text">
                             <p>Gestita da due socie con anni di esperienza dedicata all'assistenza agli anziani, Villa
@@ -246,21 +282,7 @@
                                 mantengono le risorse e le passioni di chi vive con noi.</p>
                         </div>
 
-                        <div class="trust-signals">
-                            <div class="trust-item">
-                                <div class="trust-icon"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
-                                </div>
-                                <span>Assistenza H24</span>
-                            </div>
-                            <div class="trust-item">
-                                <div class="trust-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
-                                <span>Max 4 Ospiti</span>
-                            </div>
-                            <div class="trust-item">
-                                <div class="trust-icon"><i class="fas fa-home" aria-hidden="true"></i></div>
-                                <span>Atmosfera Familiare</span>
-                            </div>
-                        </div>
+                        <p class="story-scroll-link"><a href="#services-section">Scopri cosa offriamo →</a></p>
                     </div>
 
                     <div class="about-image-col" data-aos="fade-left">
@@ -272,131 +294,47 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="quote-box-simple" data-aos="fade-up">
-                    <p>"Sempre accolti come a casa: un luogo dove ogni Senior trova serenità, affetto e una vera
-                        famiglia."</p>
-                </div>
             </div>
         </section>
 
-        <!-- Casa Famiglia vs RSA -->
-        <section id="difference-section" class="difference-section">
-            <div class="container">
-                <div class="section-header text-center mb-5">
-                    <h2 class="section-title-revamp">Più di una struttura: una vera famiglia.</h2>
-                    <p class="section-subtitle-revamp">A differenza delle tradizionali RSA, spesso percepite come
-                        ambienti freddi o sovraffollati, Villa Sole mette al centro la persona e l'intimità domestica.
-                    </p>
-                </div>
-
-                <div class="difference-grid">
-                    <article class="difference-card" data-aos="fade-up">
-                        <div class="card-icon-lg"><i class="fas fa-user-friends" aria-hidden="true"></i></div>
-                        <h3>Massimo 4 Ospiti</h3>
-                        <p>Abbiamo fatto una scelta precisa. Accogliamo un numero ristretto di Senior per offrire il
-                            massimo della nostra dedizione e creare un vero piano di vita su misura.</p>
-                    </article>
-                    <article class="difference-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-icon-lg"><i class="fas fa-clock" aria-hidden="true"></i></div>
-                        <h3>Rispetto delle Routine</h3>
-                        <p>Spazi e tempi sono studiati per vivere la quotidianità insieme, nel profondo rispetto delle
-                            abitudini e delle inclinazioni personali di ogni ospite.</p>
-                    </article>
-                    <article class="difference-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-icon-lg"><i class="fas fa-heart" aria-hidden="true"></i></div>
-                        <h3>Zero Solitudine</h3>
-                        <p>Costruiamo legami genuini attraverso attività quotidiane, gite sul territorio e feste,
-                            mantenendo sempre attive le risorse e le passioni di chi vive con noi.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Servizi -->
-        <section id="services-section" class="services-features">
+        <!-- Cosa: caratteristiche in griglia 4 colonne -->
+        <section id="services-section" class="cosa-section">
             <div class="container">
                 <div class="section-header text-center mb-5">
                     <h2 class="section-title-revamp">Tutto ciò di cui hai bisogno, pensato per te.</h2>
-                    <p class="section-subtitle-revamp">Assistenza continua e servizi alberghieri di alto livello,
-                        inclusi nella retta.</p>
+                    <p class="section-subtitle-revamp">Assistenza continua e servizi alberghieri di alto livello, inclusi nella retta.</p>
                 </div>
 
-                <div class="feature-row" data-aos="fade-up">
-                    <div class="feature-image">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
-                            alt="Assistenza e cura personalizzata agli ospiti di Villa Sole" loading="lazy">
-                    </div>
-                    <div class="feature-text">
+                <div class="cosa-grid">
+                    <article class="cosa-card" data-aos="fade-up">
+                        <div class="cosa-icon"><img src="icons/assistenza.svg" alt="" aria-hidden="true"></div>
                         <h3>Assistenza e Cura</h3>
-                        <p>Presenza continua 24 ore su 24, aiuto nell'igiene personale, supporto nella vestizione e
-                            controllo preciso dell'autosomministrazione delle terapie farmacologiche. L'assistenza
-                            sanitaria di base è garantita dal Servizio Sanitario Nazionale.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Vigilanza H24</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Controllo terapie farmacologiche</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Medico di base tramite SSN</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="feature-row reverse" data-aos="fade-up">
-                    <div class="feature-image">
-                        <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
-                            alt="Ristorazione di qualità con pasti conviviali a Villa Sole" loading="lazy">
-                    </div>
-                    <div class="feature-text">
+                        <p>Presenza H24, aiuto nell'igiene personale, supporto nella vestizione e controllo delle terapie. Assistenza sanitaria di base garantita dal SSN.</p>
+                    </article>
+                    <article class="cosa-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="cosa-icon"><img src="icons/pasti.svg" alt="" aria-hidden="true"></div>
                         <h3>Ristorazione di Qualità</h3>
-                        <p>Un servizio di tipo alberghiero che comprende 5 momenti quotidiani: colazione, spuntino
-                            mattutino, pranzo, merenda e cena. I menù sono genuini, saporiti e vengono condivisi e
-                            adattati ai gusti personali degli ospiti.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check" aria-hidden="true"></i> 5 pasti al giorno</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Menù personalizzati</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Momenti conviviali</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="feature-row" data-aos="fade-up">
-                    <div class="feature-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"
-                            alt="Comfort quotidiano e ambienti curati a Villa Sole" loading="lazy">
-                    </div>
-                    <div class="feature-text">
+                        <p>Cinque momenti quotidiani: colazione, spuntino, pranzo, merenda e cena. Menù genuini, saporiti e adattati ai gusti personali.</p>
+                    </article>
+                    <article class="cosa-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="cosa-icon"><img src="icons/pulizia.svg" alt="" aria-hidden="true"></div>
                         <h3>Comfort Quotidiano</h3>
-                        <p>Pulizia giornaliera degli ambienti, cambio biancheria, servizio completo di lavanderia,
-                            stireria e guardaroba. Televisione, internet Wi-Fi, quotidiani e riviste sempre a
-                            disposizione.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Pulizia giornaliera</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Lavanderia e stireria</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Wi-Fi e quotidiani</li>
-                        </ul>
-                    </div>
+                        <p>Pulizia giornaliera, cambio biancheria, lavanderia e stireria. Wi-Fi, televisione, quotidiani e riviste sempre disponibili.</p>
+                    </article>
+                    <article class="cosa-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="cosa-icon"><img src="icons/attivita.svg" alt="" aria-hidden="true"></div>
+                        <h3>Attività e Animazione</h3>
+                        <p>Laboratori di lettura, ginnastica dolce, cucina, arte e musica. Gite, feste e uscite sul territorio con coinvolgimento delle famiglie.</p>
+                    </article>
                 </div>
 
-                <div class="feature-row reverse" data-aos="fade-up">
-                    <div class="feature-image">
-                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80"
-                            alt="Attività di animazione e laboratori a Villa Sole" loading="lazy">
-                    </div>
-                    <div class="feature-text">
-                        <h3>Attività e Animazione</h3>
-                        <p>Laboratori di lettura, ginnastica dolce, cucina, arte e musica. Organizziamo feste per
-                            compleanni e festività, coinvolgendo le famiglie. Gite, uscite sul territorio e attività
-                            giornaliere mantengono attive le risorse di ogni ospite.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Laboratori creativi</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Gite e uscite</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> Feste con le famiglie</li>
-                        </ul>
-                    </div>
+                <div class="cta-block" data-aos="fade-up">
+                    <a href="#visit-section" class="cta-button">Prenota una visita</a>
                 </div>
             </div>
         </section>
 
-        <!-- Servizi inclusi nella retta -->
+        <!-- Servizi inclusi nella retta (dettaglio) -->
         <section class="services-included-section" aria-label="Servizi inclusi nella retta">
             <div class="container">
                 <div class="section-header text-center mb-5">
@@ -486,56 +424,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Galleria -->
-        <section class="gallery-section" id="gallery-section" aria-label="Galleria fotografica">
-            <div class="container">
-                <div class="gallery-header">
-                    <h2>La nostra Casa Famiglia</h2>
-                    <p>Scopri gli ambienti accoglienti e gli spazi pensati per il benessere a Villa Sole. Le immagini
-                        sono indicative in attesa del materiale fotografico ufficiale.</p>
-                </div>
-
-                <div class="gallery-carousel">
-                    <button class="gallery-nav prev" aria-label="Immagine precedente"><i class="fas fa-chevron-left"
-                            aria-hidden="true"></i></button>
-                    <div class="gallery-track" id="galleryTrack">
-                        <div class="gallery-slide gallery-item">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
-                                alt="Esterno villetta Villa Sole - immagine rappresentativa" class="gallery-img"
-                                loading="lazy">
-                        </div>
-                        <div class="gallery-slide gallery-item">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
-                                alt="Soggiorno luminoso - immagine rappresentativa" class="gallery-img" loading="lazy">
-                        </div>
-                        <div class="gallery-slide gallery-item">
-                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80"
-                                alt="Camera accogliente - immagine rappresentativa" class="gallery-img" loading="lazy">
-                        </div>
-                        <div class="gallery-slide gallery-item">
-                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80"
-                                alt="Zona living - immagine rappresentativa" class="gallery-img" loading="lazy">
-                        </div>
-                        <div class="gallery-slide gallery-item">
-                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c45751?w=1200&q=80"
-                                alt="Ambiente domestico - immagine rappresentativa" class="gallery-img" loading="lazy">
-                        </div>
-                        <div class="gallery-slide gallery-item">
-                            <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=1200&q=80"
-                                alt="Cucina e convivialità - immagine rappresentativa" class="gallery-img"
-                                loading="lazy">
-                        </div>
-                        <div class="gallery-slide gallery-item">
-                            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80"
-                                alt="Spazi interni curati - immagine rappresentativa" class="gallery-img" loading="lazy">
-                        </div>
-                    </div>
-                    <button class="gallery-nav next" aria-label="Immagine successiva"><i class="fas fa-chevron-right"
-                            aria-hidden="true"></i></button>
                 </div>
             </div>
         </section>
@@ -635,6 +523,106 @@
             </div>
         </section>
 
+        <!-- Galleria -->
+        <section class="gallery-section" id="gallery-section" aria-label="Galleria fotografica">
+            <div class="container">
+                <div class="gallery-header">
+                    <h2>La nostra Casa Famiglia</h2>
+                    <p>Scopri gli ambienti accoglienti e gli spazi pensati per il benessere a Villa Sole. Le immagini
+                        sono indicative in attesa del materiale fotografico ufficiale.</p>
+                </div>
+
+                <div class="gallery-carousel">
+                    <button class="gallery-nav prev" aria-label="Immagine precedente"><i class="fas fa-chevron-left"
+                            aria-hidden="true"></i></button>
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-slide gallery-item">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+                                alt="Esterno villetta Villa Sole - immagine rappresentativa" class="gallery-img"
+                                loading="lazy">
+                        </div>
+                        <div class="gallery-slide gallery-item">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+                                alt="Soggiorno luminoso - immagine rappresentativa" class="gallery-img" loading="lazy">
+                        </div>
+                        <div class="gallery-slide gallery-item">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80"
+                                alt="Camera accogliente - immagine rappresentativa" class="gallery-img" loading="lazy">
+                        </div>
+                        <div class="gallery-slide gallery-item">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80"
+                                alt="Zona living - immagine rappresentativa" class="gallery-img" loading="lazy">
+                        </div>
+                        <div class="gallery-slide gallery-item">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c45751?w=1200&q=80"
+                                alt="Ambiente domestico - immagine rappresentativa" class="gallery-img" loading="lazy">
+                        </div>
+                        <div class="gallery-slide gallery-item">
+                            <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=1200&q=80"
+                                alt="Cucina e convivialità - immagine rappresentativa" class="gallery-img"
+                                loading="lazy">
+                        </div>
+                        <div class="gallery-slide gallery-item">
+                            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80"
+                                alt="Spazi interni curati - immagine rappresentativa" class="gallery-img" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="gallery-nav next" aria-label="Immagine successiva"><i class="fas fa-chevron-right"
+                            aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Riprova sociale -->
+        <section class="social-proof-section" id="reviews-section" aria-label="Testimonianze">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <h2 class="section-title-revamp">L'esperienza a Villa Sole</h2>
+                    <p class="section-subtitle-revamp">Numeri che raccontano la nostra attenzione, e le parole di chi ci ha scelto.</p>
+                </div>
+
+                <div class="social-stats" data-aos="fade-up">
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Ospiti max</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">H24</span>
+                        <span class="stat-label">Assistenza continua</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">+10</span>
+                        <span class="stat-label">Anni di esperienza</span>
+                    </div>
+                </div>
+
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-avatar" aria-hidden="true">M.R.</div>
+                        <p class="testimonial-quote">"Volevamo un posto piccolo, dove mia madre non si sentisse un numero. Qui l'attenzione è vera — come in famiglia."</p>
+                        <footer class="testimonial-author">
+                            <cite>Marco R.</cite>
+                            <span class="testimonial-note">Esempio di testimonianza</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-avatar" aria-hidden="true">L.B.</div>
+                        <p class="testimonial-quote">"La visita in struttura ci ha rassicurato subito: ambienti luminosi, titolari presenti, nessuna sensazione di 'istituzione'."</p>
+                        <footer class="testimonial-author">
+                            <cite>Laura B.</cite>
+                            <span class="testimonial-note">Esempio di testimonianza</span>
+                        </footer>
+                    </blockquote>
+                </div>
+
+                <p class="social-proof-disclaimer">Villa Sole è una struttura di recente apertura. Le testimonianze sopra sono esempi di layout — le recensioni reali verranno pubblicate non appena disponibili.</p>
+
+                <div class="cta-block" data-aos="fade-up">
+                    <a href="#visit-section" class="cta-button">Prenota una visita</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Prezzi -->
         <section class="pricing-section" id="pricing-section">
             <div class="container">
@@ -648,126 +636,22 @@
                         <div class="pricing-card">
                             <h3><i class="fas fa-bed" aria-hidden="true"></i> Camera Singola</h3>
                             <p>Massima privacy e comfort in un ambiente intimo e curato.</p>
-                            <a href="#contatti" class="btn btn-gold">Richiedi informazioni</a>
+                            <a href="#visit-section" class="cta-button cta-button-compact">Prenota una visita</a>
                         </div>
                         <div class="pricing-card">
                             <h3><i class="fas fa-user-friends" aria-hidden="true"></i> Camera Doppia</h3>
                             <p>Condivisione in un clima familiare, ideale per chi ama la compagnia.</p>
-                            <a href="#contatti" class="btn btn-gold">Richiedi informazioni</a>
+                            <a href="#visit-section" class="cta-button cta-button-compact">Prenota una visita</a>
                         </div>
                         <div class="pricing-card">
                             <h3><i class="fas fa-sun" aria-hidden="true"></i> Periodi Estivi</h3>
                             <p>Costi settimanali per periodi estivi in caso di camere libere.</p>
-                            <a href="#contatti" class="btn btn-gold">Richiedi informazioni</a>
+                            <a href="#visit-section" class="cta-button cta-button-compact">Prenota una visita</a>
                         </div>
                     </div>
                     <p class="pricing-note">I prezzi dettagliati verranno comunicati personalmente. Al momento
                         dell'ingresso vengono consegnati il Regolamento del Residence, la Carta dei Servizi e il
                         Contratto tra le parti.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Recensioni placeholder -->
-        <section class="reviews-placeholder" id="reviews-section" aria-label="Testimonianze">
-            <div class="container">
-                <div class="section-header text-center mb-5">
-                    <h2 class="section-title-revamp">L'esperienza a Villa Sole</h2>
-                    <p class="section-subtitle-revamp">Le testimonianze di chi ha scelto Villa Sole per i propri cari.
-                    </p>
-                </div>
-                <div class="reviews-placeholder-box" data-aos="fade-up">
-                    <i class="fas fa-quote-left" aria-hidden="true"></i>
-                    <p>Questa sezione raccoglierà le testimonianze e le parole di chi ha scelto Villa Sole per i propri
-                        cari. Sappiamo quanto sia importante la fiducia in una decisione così delicata: stiamo
-                        costruendo un ambiente basato sulla trasparenza e sull'affetto, e non vediamo l'ora di
-                        condividere qui le storie della nostra nuova grande famiglia.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Dove Siamo -->
-        <section class="location-section" id="location-section" aria-label="Dove siamo e come raggiungerci">
-            <div class="container">
-                <div class="section-header text-center mb-5">
-                    <h2 class="section-title-revamp">Vieni a conoscerci</h2>
-                    <p class="section-subtitle-revamp">Siamo nel cuore di Roasio, facilmente raggiungibili dal
-                        Piemonte e dalla Lombardia.</p>
-                </div>
-
-                <div class="location-grid">
-                    <div class="location-info-card" data-aos="fade-right">
-                        <h3>Indirizzo e Contatti</h3>
-                        <div class="location-detail">
-                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            <div>
-                                <strong>Indirizzo</strong><br>
-                                Via Pietro Micca N.28<br>
-                                13040 Roasio (VC)<br>
-                                Piemonte, Italia
-                            </div>
-                        </div>
-                        <div class="location-detail">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <div>
-                                <strong>Email</strong><br>
-                                <a href="mailto:info@villasole.it">info@villasole.it</a>
-                            </div>
-                        </div>
-                        <div class="location-detail">
-                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                            <div>
-                                <strong>Telefono</strong><br>
-                                <span>Disponibile a breve — contattaci via email</span>
-                            </div>
-                        </div>
-                        <div class="location-detail">
-                            <i class="fas fa-clock" aria-hidden="true"></i>
-                            <div>
-                                <strong>Visite in struttura</strong><br>
-                                Su appuntamento, anche nei weekend. Senza impegno.
-                            </div>
-                        </div>
-
-                        <div class="directions-list">
-                            <h4>Come raggiungerci</h4>
-                            <ul>
-                                <li>
-                                    <i class="fas fa-car" aria-hidden="true"></i>
-                                    <span><strong>In auto da Vercelli:</strong> prendere la SP per Roasio (circa 15
-                                        minuti). Villa Sole si trova in Via Pietro Micca, nel centro del paese.</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-car" aria-hidden="true"></i>
-                                    <span><strong>In auto da Novara:</strong> seguire la SS211 in direzione Vercelli,
-                                        poi uscire verso Roasio. Tempo di percorrenza indicativo: 35-40 minuti.</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-car" aria-hidden="true"></i>
-                                    <span><strong>In auto da Milano:</strong> A4 Torino-Milano, uscita Vercelli Sud,
-                                        poi direzione Roasio. Percorrenza indicativa: 1 ora e 15 minuti.</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-train" aria-hidden="true"></i>
-                                    <span><strong>In treno:</strong> stazione più vicina Vercelli Porta Susa (linea
-                                        Torino-Milano). Da lì, taxi o auto per Roasio (circa 15 minuti).</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Pietro+Micca+28,+13040+Roasio+VC,+Italy"
-                            target="_blank" rel="noopener noreferrer" class="btn btn-gold mt-3">
-                            <i class="fas fa-directions" aria-hidden="true"></i> Apri indicazioni stradali
-                        </a>
-                    </div>
-
-                    <div class="map-container" data-aos="fade-left">
-                        <iframe
-                            title="Mappa Villa Sole - Via Pietro Micca 28, Roasio (VC)"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2820.5!2d8.3833!3d45.6175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4788020e0e0e0e0e%3A0x0!2sVia%20Pietro%20Micca%2C%2028%2C%2013040%20Roasio%20VC!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
-                            allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
                 </div>
             </div>
         </section>
@@ -821,11 +705,94 @@
                                             href="termini-condizioni.html" target="_blank">Termini e Condizioni</a>.</span>
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-call">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                                Richiedi visita
-                            </button>
+                            <button type="submit" class="cta-button cta-button-full">Prenota una visita</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dove Siamo -->
+        <section class="location-section" id="location-section" aria-label="Dove siamo e come raggiungerci">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <h2 class="section-title-revamp">Dove siamo</h2>
+                    <p class="section-subtitle-revamp">Siamo nel cuore di Roasio, facilmente raggiungibili dal
+                        Piemonte e dalla Lombardia.</p>
+                </div>
+
+                <div class="location-grid">
+                    <div class="location-info-card" data-aos="fade-right">
+                        <h3>Indirizzo e Contatti</h3>
+                        <div class="location-detail">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <div>
+                                <strong>Indirizzo</strong><br>
+                                Via Pietro Micca N.28<br>
+                                13040 Roasio (VC)<br>
+                                Piemonte, Italia
+                            </div>
+                        </div>
+                        <div class="location-detail">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <strong>Email</strong><br>
+                                <a href="mailto:info@villasole.it" class="text-link-inline">info@villasole.it</a>
+                            </div>
+                        </div>
+                        <div class="location-detail">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                            <div>
+                                <strong>Telefono</strong><br>
+                                <span>Disponibile a breve — <a href="mailto:info@villasole.it" class="text-link-inline">scrivici via email</a></span>
+                            </div>
+                        </div>
+                        <div class="location-detail">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            <div>
+                                <strong>Visite in struttura</strong><br>
+                                Su appuntamento, anche nei weekend. Senza impegno.
+                            </div>
+                        </div>
+
+                        <div class="directions-list">
+                            <h4>Come raggiungerci</h4>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-car" aria-hidden="true"></i>
+                                    <span><strong>In auto da Vercelli:</strong> prendere la SP per Roasio (circa 15
+                                        minuti). Villa Sole si trova in Via Pietro Micca, nel centro del paese.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-car" aria-hidden="true"></i>
+                                    <span><strong>In auto da Novara:</strong> seguire la SS211 in direzione Vercelli,
+                                        poi uscire verso Roasio. Tempo di percorrenza indicativo: 35-40 minuti.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-car" aria-hidden="true"></i>
+                                    <span><strong>In auto da Milano:</strong> A4 Torino-Milano, uscita Vercelli Sud,
+                                        poi direzione Roasio. Percorrenza indicativa: 1 ora e 15 minuti.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-train" aria-hidden="true"></i>
+                                    <span><strong>In treno:</strong> stazione più vicina Vercelli Porta Susa (linea
+                                        Torino-Milano). Da lì, taxi o auto per Roasio (circa 15 minuti).</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Pietro+Micca+28,+13040+Roasio+VC,+Italy"
+                            target="_blank" rel="noopener noreferrer" class="text-link-inline mt-3">
+                            <i class="fas fa-directions" aria-hidden="true"></i> Apri indicazioni stradali
+                        </a>
+                    </div>
+
+                    <div class="map-container" data-aos="fade-left">
+                        <iframe
+                            title="Mappa Villa Sole - Via Pietro Micca 28, Roasio (VC)"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2820.5!2d8.3833!3d45.6175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4788020e0e0e0e0e%3A0x0!2sVia%20Pietro%20Micca%2C%2028%2C%2013040%20Roasio%20VC!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
+                            allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -921,10 +888,10 @@
 
                 <div class="faq-cta">
                     <h3>Desideri saperne di più?</h3>
-                    <p>Siamo a disposizione per rispondere a ogni tua domanda e illustrarti in dettaglio i servizi di
-                        Villa Sole.</p>
-                    <a href="mailto:info@villasole.it" class="btn btn-call"><i class="fas fa-envelope"
-                            aria-hidden="true"></i> Scrivici</a>
+                    <p>Siamo a disposizione per rispondere a ogni tua domanda. Scrivici a <a href="mailto:info@villasole.it" class="text-link-inline">info@villasole.it</a> oppure prenota una visita in struttura.</p>
+                    <div class="cta-block cta-block-inline">
+                        <a href="#visit-section" class="cta-button">Prenota una visita</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -942,16 +909,12 @@
                             <li><img src="icons/location.svg" alt="" class="contact-icon" aria-hidden="true"><strong>Indirizzo:</strong>
                                 Via Pietro Micca N.28 – 13040 Roasio (VC)</li>
                             <li><img src="icons/email.svg" alt="" class="contact-icon" aria-hidden="true"><strong>Email:</strong>
-                                <a href="mailto:info@villasole.it">info@villasole.it</a></li>
+                                <a href="mailto:info@villasole.it" class="text-link-inline">info@villasole.it</a></li>
                             <li><img src="icons/phone.svg" alt="" class="contact-icon" aria-hidden="true"><strong>Telefono:</strong>
                                 Disponibile a breve</li>
                         </ul>
 
-                        <div class="cta-buttons">
-                            <a href="mailto:info@villasole.it" class="btn btn-call"><i class="fas fa-envelope"
-                                    aria-hidden="true"></i> Scrivici</a>
-                            <a href="#visit-section" class="btn btn-whatsapp">Prenota una visita</a>
-                        </div>
+                        <p class="contact-secondary-links">Preferisci scriverci? <a href="mailto:info@villasole.it" class="text-link-inline">info@villasole.it</a></p>
                     </div>
 
                     <div class="contact-photo">
@@ -971,6 +934,11 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2820.5!2d8.3833!3d45.6175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4788020e0e0e0e0e%3A0x0!2sVia%20Pietro%20Micca%2C%2028%2C%2013040%20Roasio%20VC!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                </div>
+
+                <div class="cta-block cta-block-footer" data-aos="fade-up">
+                    <p class="cta-block-text">Vieni a conoscere Villa Sole di persona — senza impegno.</p>
+                    <a href="#visit-section" class="cta-button">Prenota una visita</a>
                 </div>
             </div>
         </section>
@@ -993,11 +961,11 @@
                     <div class="footer-col">
                         <h4>Info utili</h4>
                         <ul>
-                            <li><a href="#about-section">Chi siamo</a></li>
+                            <li><a href="#about-section">Chi Siamo</a></li>
                             <li><a href="#services-section">Servizi</a></li>
-                            <li><a href="#daily-schedule">La nostra giornata</a></li>
+                            <li><a href="#house-section">La Struttura</a></li>
+                            <li><a href="#gallery-section">Galleria</a></li>
                             <li><a href="#pricing-section">Prezzi</a></li>
-                            <li><a href="#location-section">Dove siamo</a></li>
                             <li><a href="#contatti">Contatti</a></li>
                         </ul>
                     </div>
@@ -1020,14 +988,15 @@
         </div>
     </footer>
 
+    <a href="mailto:info@villasole.it" class="whatsapp-float" aria-label="Contattaci via email">
+        <img src="icons/whatsapp.svg" alt="" class="whatsapp-icon" aria-hidden="true">
+        <span class="whatsapp-text">Contattaci</span>
+    </a>
+
     <div class="mobile-sticky-pill">
-        <a href="mailto:info@villasole.it" class="pill-btn pill-whatsapp" aria-label="Invia email">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
-        <div class="pill-divider"></div>
         <a href="#visit-section" class="pill-btn pill-call">
             <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-            <span>Visita</span>
+            <span>Prenota una visita</span>
         </a>
     </div>
 
@@ -1042,7 +1011,7 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js?v=1.0.0"></script>
+    <script src="script.js?v=1.1.0"></script>
 </body>
 
 </html>
