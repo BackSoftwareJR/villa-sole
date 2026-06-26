@@ -3,6 +3,33 @@
  * Interazioni UI: menu, caroselli, FAQ, lightbox, form contatti
  */
 
+function initScrollToTopOnRefresh() {
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+
+    function isPageReload() {
+        const navEntry = performance.getEntriesByType('navigation')[0];
+        return navEntry && navEntry.type === 'reload';
+    }
+
+    if (!isPageReload()) return;
+
+    scrollToTop();
+    window.addEventListener('load', scrollToTop);
+    window.addEventListener('pageshow', function (event) {
+        if (event.persisted || isPageReload()) {
+            scrollToTop();
+        }
+    });
+}
+
+initScrollToTopOnRefresh();
+
 function initHamburgerMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navOverlay = document.querySelector('.nav-overlay');
