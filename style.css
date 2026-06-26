@@ -3,24 +3,38 @@
 * Mobile-first approach with responsive design
 */
 
-/* Palette colori personalizzata - Premium */
+/* Villa Sole Design System */
 :root {
-    --primary-color: #8B4513;
-    /* Warm terracotta */
-    --secondary-color: #E6A817;
-    /* Sunny gold */
-    --text-dark: #2C2C2C;
-    --text-light: #666666;
-    --bg-cream: #FAF9F6;
-    --cornsilk: #FFF8E7;
-    --white: #FFFFFF;
+    /* Core palette */
+    --color-bg-cream: #FAF6E9;
+    --color-text: #4A4641;
+    --color-text-muted: #6B6762;
+    --color-solar-gold: #EDC75E;
+    --color-sage-green: #8CB28F;
+    --color-terracotta: #BC6B55;
+    --color-terracotta-dark: #A85A46;
+    --color-cta-text: #FAF6E9;
+    --color-white: #FFFFFF;
 
-    /* Gradients */
-    --gold-gradient: linear-gradient(135deg, #E6A817 0%, #F5D78E 100%);
+    /* Semantic aliases */
+    --primary-color: var(--color-terracotta);
+    --secondary-color: var(--color-solar-gold);
+    --accent-sage: var(--color-sage-green);
+    --text-dark: var(--color-text);
+    --text-light: var(--color-text-muted);
+    --bg-cream: var(--color-bg-cream);
+    --cornsilk: var(--color-bg-cream);
+    --white: var(--color-white);
+    --cta-text: var(--color-cta-text);
 
-    /* Fonts */
-    --font-heading: 'Playfair Display', serif;
+    --gold-gradient: linear-gradient(135deg, var(--color-solar-gold) 0%, #F5E6A8 100%);
+    --border-light: rgba(140, 178, 143, 0.35);
+    --divider-gold: var(--color-solar-gold);
+
+    /* Typography */
+    --font-heading: 'Lora', serif;
     --font-body: 'Lato', sans-serif;
+    --font-cta: 'Lato', sans-serif;
 }
 
 /* Reset e base */
@@ -51,10 +65,10 @@ body {
 }
 
 .site-header.scrolled {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(250, 246, 233, 0.95);
     backdrop-filter: blur(10px);
     padding: 15px 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(74, 70, 65, 0.06);
 }
 
 .header-container {
@@ -88,10 +102,10 @@ body {
 }
 
 .menu-text {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--primary-color);
+    color: var(--color-text);
     font-size: 14px;
     transition: color 0.3s ease;
 }
@@ -113,7 +127,7 @@ body {
 .hamburger-icon span {
     width: 20px;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: var(--color-text);
     transition: all 0.3s ease;
 }
 
@@ -307,7 +321,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f5f5f5;
+    background: var(--bg-cream);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -371,7 +385,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(to top, rgba(74, 70, 65, 0.75) 0%, rgba(74, 70, 65, 0.35) 50%, rgba(74, 70, 65, 0.15) 100%);
     z-index: 1;
 }
 
@@ -473,21 +487,21 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, var(--secondary-color), #dabb51);
-    color: var(--text-dark);
+    background: var(--color-terracotta);
+    color: var(--color-cta-text);
     font-size: 1.05rem;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     padding: 16px 32px;
     border-radius: 50px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(188, 107, 85, 0.25);
     letter-spacing: 0.02em;
     min-width: 220px;
     text-transform: uppercase;
-    font-family: var(--font-body);
+    font-family: var(--font-cta);
     border: none;
 }
 
@@ -500,23 +514,23 @@ body {
 }
 
 .cta-button-secondary {
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background: rgba(250, 246, 233, 0.95);
+    color: var(--color-text);
+    border: 2px solid var(--color-sage-green);
 }
 
 .cta-button-secondary:hover {
-    background: var(--primary-color);
-    color: var(--bg-cream);
-    border-color: var(--primary-color);
+    background: var(--color-sage-green);
+    color: var(--color-cta-text);
+    border-color: var(--color-sage-green);
 }
 
 .cta-button:hover,
 .cta-button:focus {
-    background: linear-gradient(to right, #dabb51, var(--secondary-color));
+    background: var(--color-terracotta-dark);
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    color: var(--text-dark);
+    box-shadow: 0 8px 25px rgba(188, 107, 85, 0.35);
+    color: var(--color-cta-text);
 }
 
 .cta-button:active {
@@ -686,7 +700,7 @@ body {
 .section-title-revamp {
     font-family: var(--font-heading);
     font-size: 3rem;
-    color: var(--primary-color);
+    color: var(--color-text);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
@@ -704,7 +718,7 @@ body {
     font-size: 1.2rem;
     /* Aumentato per leggibilità */
     line-height: 1.8;
-    color: #333;
+    color: var(--text-dark);
     /* Contrasto alto */
     margin-bottom: 1.5rem;
 }
@@ -734,16 +748,16 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 2px solid var(--secondary-color);
-    transition: transform 0.3s ease;
+    color: var(--color-solar-gold);
+    box-shadow: 0 4px 15px rgba(74, 70, 65, 0.08);
+    border: 2px solid var(--color-sage-green);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .trust-item:hover .trust-icon {
     transform: translateY(-5px);
-    background: var(--primary-color);
-    color: white;
+    background: var(--color-sage-green);
+    color: var(--color-cta-text);
 }
 
 .trust-item span {
@@ -800,7 +814,7 @@ body {
 .quote-box-simple p {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--color-text);
     font-style: italic;
 }
 
@@ -1801,7 +1815,7 @@ body {
 }
 
 .story-cta .btn-call {
-    background: linear-gradient(to right, var(--secondary-color), #dabb51);
+    background: linear-gradient(to right, var(--secondary-color), var(--color-solar-gold));
     color: var(--text-dark);
     border: none;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -1810,7 +1824,7 @@ body {
 .story-cta .btn-call:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(to right, #dabb51, var(--secondary-color));
+    background: linear-gradient(to right, var(--color-solar-gold), var(--secondary-color));
 }
 
 .story-cta .btn-outline {
@@ -1904,7 +1918,7 @@ body {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.8rem;
-    color: #444;
+    color: var(--text-dark);
     position: relative;
     padding-left: 12px;
     border-left: 2px solid rgba(212, 175, 55, 0.2);
@@ -1915,7 +1929,7 @@ body {
 .about-text p:first-of-type {
     font-size: 1.2rem;
     font-weight: 500;
-    color: #556B2F;
+    color: var(--color-sage-green);
     /* Verde oliva scuro */
 }
 
@@ -1933,7 +1947,7 @@ body {
     line-height: 1.6;
     border-radius: 12px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    color: #556B2F;
+    color: var(--color-sage-green);
     /* Verde oliva scuro */
     text-align: center;
     font-weight: 500;
@@ -2248,7 +2262,7 @@ body {
 .card-content p {
     font-family: var(--font-body);
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-light);
     line-height: 1.6;
     margin-bottom: 0;
 }
@@ -2366,7 +2380,7 @@ body {
 
 .feature-text p {
     font-size: 1.15rem;
-    color: #555;
+    color: var(--text-light);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
@@ -2482,7 +2496,7 @@ body {
 
 .card-info p {
     font-size: 1rem;
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 0;
     line-height: 1.5;
 }
@@ -2762,7 +2776,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #556B2F;
+    color: var(--color-sage-green);
     position: relative;
     padding-bottom: 0.8rem;
     letter-spacing: -0.01em;
@@ -2782,7 +2796,7 @@ body {
 }
 
 .service-card:hover h3 {
-    color: #3c4e14;
+    color: var(--color-sage-green);
     /* Verde più scuro e ricco al passaggio del mouse */
 }
 
@@ -2796,7 +2810,7 @@ body {
     font-family: var(--font-body);
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #444;
+    color: var(--text-dark);
     margin-bottom: 0;
     padding-left: 10px;
     border-left: 2px solid rgba(212, 175, 55, 0.2);
@@ -2804,7 +2818,7 @@ body {
 }
 
 .service-card:hover p {
-    color: #333;
+    color: var(--text-dark);
     /* Testo più scuro al passaggio del mouse per maggiore leggibilità */
     border-left-color: rgba(212, 175, 55, 0.4);
 }
@@ -2850,7 +2864,7 @@ body {
 
 .services-cta h3 {
     font-family: var(--font-heading);
-    color: #556B2F;
+    color: var(--color-sage-green);
     font-size: 2.3rem;
     margin-bottom: 1.8rem;
     font-weight: 700;
@@ -2879,7 +2893,7 @@ body {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    color: #333;
+    color: var(--text-dark);
     position: relative;
     z-index: 1;
 }
@@ -2888,7 +2902,7 @@ body {
     display: block;
     margin-top: 1.5rem;
     font-size: 1.1rem;
-    color: #556B2F;
+    color: var(--color-sage-green);
     font-weight: 600;
     padding: 1rem;
     border-top: 1px dashed rgba(212, 175, 55, 0.3);
@@ -2900,7 +2914,7 @@ body {
 .location-highlight strong {
     font-weight: 700;
     font-size: 1.15rem;
-    color: #3c4e14;
+    color: var(--color-sage-green);
 }
 
 /* Bottoni CTA */
@@ -2952,7 +2966,7 @@ body {
 
 .services-cta .btn-outline {
     border: 2px solid rgba(85, 107, 47, 0.7);
-    color: #3c4e14;
+    color: var(--color-sage-green);
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 8px;
     font-size: 1.1rem;
@@ -2968,7 +2982,7 @@ body {
     background-color: rgba(85, 107, 47, 0.1);
     transform: translateY(-5px);
     border-color: rgba(85, 107, 47, 1);
-    color: #2a3808;
+    color: var(--color-sage-green);
     box-shadow: 0 10px 25px rgba(85, 107, 47, 0.2), 0 5px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -3012,9 +3026,9 @@ body {
 }
 
 .btn-call {
-    background: linear-gradient(to right, var(--secondary-color), #dabb51);
-    color: var(--text-dark);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: var(--color-terracotta);
+    color: var(--color-cta-text);
+    box-shadow: 0 4px 12px rgba(188, 107, 85, 0.25);
     border: none;
     position: relative;
     overflow: hidden;
@@ -3024,7 +3038,8 @@ body {
     border-radius: 50px;
     text-align: center;
     width: 100%;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: var(--font-cta);
     z-index: 1;
     letter-spacing: 0.5px;
 }
@@ -3044,9 +3059,9 @@ body {
 }
 
 .btn-call:hover {
-    background: linear-gradient(to right, #dabb51, var(--secondary-color));
+    background: var(--color-terracotta-dark);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 20px rgba(188, 107, 85, 0.35);
 }
 
 .btn-call:hover::after {
@@ -3066,20 +3081,20 @@ body {
 }
 
 .btn-outline {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid var(--color-sage-green);
+    color: var(--color-text);
     background-color: transparent;
 }
 
 .btn-outline:hover {
-    background-color: var(--primary-color);
-    color: var(--bg-cream);
+    background-color: var(--color-sage-green);
+    color: var(--color-cta-text);
 }
 
 .btn-whatsapp {
-    background: linear-gradient(to right, var(--secondary-color), #dabb51);
-    color: var(--text-dark);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: var(--color-terracotta);
+    color: var(--color-cta-text);
+    box-shadow: 0 4px 12px rgba(188, 107, 85, 0.25);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3087,7 +3102,8 @@ body {
     padding: 18px 24px;
     font-size: 1.1rem;
     position: relative;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: var(--font-cta);
     border-radius: 50px;
     text-align: center;
     width: 100%;
@@ -3118,9 +3134,10 @@ body {
 }
 
 .btn-whatsapp:hover {
-    background: linear-gradient(to right, #dabb51, var(--secondary-color));
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    background: var(--color-terracotta-dark);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(188, 107, 85, 0.35);
+    color: var(--color-cta-text);
 }
 
 .btn-whatsapp:hover::after {
@@ -3145,12 +3162,6 @@ body {
         transform: scale(20, 20);
         opacity: 0;
     }
-}
-
-.btn-whatsapp:hover {
-    background: linear-gradient(to right, #dabb51, var(--secondary-color));
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-whatsapp:active::after {
@@ -3246,7 +3257,7 @@ body {
 */
 
 .testimonials-section {
-    background-color: #FDF8E2;
+    background-color: var(--bg-cream);
     /* Crema chiaro come richiesto */
     padding: 70px 0 50px;
     position: relative;
@@ -3263,7 +3274,7 @@ body {
 
 .testimonials-header h2 {
     font-family: var(--font-heading);
-    color: #556B2F;
+    color: var(--color-sage-green);
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
@@ -3280,7 +3291,7 @@ body {
     transform: translateX(-50%);
     width: 60px;
     height: 2px;
-    background-color: #D4AF37;
+    background-color: var(--color-solar-gold);
     /* Oro brunito */
     border-radius: 2px;
 }
@@ -3289,7 +3300,7 @@ body {
     font-family: var(--font-body);
     font-size: 1.15rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--text-dark);
 }
 
 /* Griglia testimonianze */
@@ -3308,7 +3319,7 @@ body {
     box-shadow: 0 6px 15px rgba(85, 107, 47, 0.08);
     position: relative;
     transition: all 0.3s ease;
-    border-left: 3px solid #D4AF37;
+    border-left: 3px solid var(--color-solar-gold);
     /* Bordo oro brunito */
     background-image: linear-gradient(145deg, #fff, #FDF8E2 80%);
     /* Sfondo con sfumatura crema */
@@ -3317,7 +3328,7 @@ body {
 .testimonial-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(85, 107, 47, 0.12);
-    border-left: 5px solid #D4AF37;
+    border-left: 5px solid var(--color-solar-gold);
     /* Bordo oro brunito più marcato */
 }
 
@@ -3336,7 +3347,7 @@ body {
     font-family: var(--font-body);
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--text-dark);
     font-style: italic;
     margin-bottom: 1.5rem;
     position: relative;
@@ -3370,14 +3381,14 @@ body {
     object-fit: cover;
     border: 2px solid rgba(212, 175, 55, 0.4);
     /* Oro brunito con trasparenza */
-    background-color: #eee;
+    background-color: var(--bg-cream);
     /* Placeholder color */
 }
 
 .testimonial-author {
     font-family: var(--font-body);
     font-weight: 600;
-    color: #556B2F;
+    color: var(--color-sage-green);
     /* Verde oliva scuro */
     font-size: 0.95rem;
 }
@@ -3414,7 +3425,7 @@ body {
 
 .testimonial-cta h3 {
     font-family: var(--font-heading);
-    color: #556B2F;
+    color: var(--color-sage-green);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -3422,7 +3433,7 @@ body {
 .testimonial-cta p {
     font-family: var(--font-body);
     font-size: 1.05rem;
-    color: #444;
+    color: var(--text-dark);
     margin-bottom: 1.8rem;
     max-width: 600px;
     margin-left: auto;
@@ -3707,7 +3718,7 @@ body {
 */
 
 .faq-section {
-    background-color: #fff;
+    background-color: var(--bg-cream);
     padding: 70px 0 60px;
     position: relative;
 }
@@ -3723,7 +3734,7 @@ body {
 
 .faq-header h2 {
     font-family: var(--font-heading);
-    color: var(--primary-color);
+    color: var(--color-text);
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -3745,7 +3756,7 @@ body {
 
 /* Singolo item FAQ */
 .faq-item {
-    border-bottom: 1px solid rgba(172, 20, 10, 0.2);
+    border-bottom: 1px solid var(--color-solar-gold);
     margin-bottom: 0.5rem;
 }
 
@@ -3759,7 +3770,7 @@ body {
     font-family: var(--font-body);
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--color-text);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -3768,12 +3779,12 @@ body {
 }
 
 .faq-question:hover {
-    color: var(--secondary-color);
+    color: var(--color-sage-green);
 }
 
 .faq-question:focus {
     outline: none;
-    color: var(--secondary-color);
+    color: var(--color-sage-green);
 }
 
 /* Icona + / - */
@@ -3812,7 +3823,7 @@ body {
     font-family: var(--font-body);
     font-size: 1.05rem;
     line-height: 1.6;
-    color: #444;
+    color: var(--text-dark);
     max-width: 700px;
 }
 
@@ -3909,7 +3920,7 @@ body {
 */
 
 .contact-section {
-    background-color: #FDF8E2;
+    background-color: var(--bg-cream);
     /* Crema chiaro come richiesto */
     padding: 70px 0 60px;
     position: relative;
@@ -3929,7 +3940,7 @@ body {
 
 .contact-info h2 {
     font-family: var(--font-heading);
-    color: var(--primary-color);
+    color: var(--color-text);
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
@@ -3969,19 +3980,17 @@ body {
     display: inline-block;
     vertical-align: middle;
     margin-right: 4px;
-    filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-    /* Filtro per rendere le icone rosse (--rufous) */
 }
 
 .contact-list li a {
-    color: var(--primary-color);
+    color: var(--color-sage-green);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .contact-list li a:hover {
-    color: var(--secondary-color);
+    color: var(--color-terracotta);
     text-decoration: underline;
     transform: translateY(-1px);
 }
@@ -4078,9 +4087,10 @@ body {
 
 /* Footer Style */
 .site-footer {
-    background-color: var(--primary-color);
+    background-color: var(--bg-cream);
     padding: 60px 0 20px;
-    color: var(--bg-cream);
+    color: var(--color-text);
+    border-top: 2px solid var(--color-solar-gold);
 }
 
 .footer-content {
@@ -4108,10 +4118,9 @@ body {
 
 .footer-info h3 {
     font-family: var(--font-heading);
-    color: var(--secondary-color);
+    color: var(--color-text);
     font-size: 1.6rem;
     margin-bottom: 1rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .footer-info p {
@@ -4129,7 +4138,7 @@ body {
 
 .footer-col h4 {
     font-family: var(--font-heading);
-    color: var(--secondary-color);
+    color: var(--color-text);
     font-size: 1.1rem;
     margin-bottom: 1rem;
     position: relative;
@@ -4143,7 +4152,7 @@ body {
     left: 0;
     width: 40px;
     height: 2px;
-    background-color: rgba(245, 195, 122, 0.5);
+    background-color: var(--color-solar-gold);
 }
 
 .footer-col ul {
@@ -4156,7 +4165,7 @@ body {
 }
 
 .footer-col ul li a {
-    color: var(--bg-cream);
+    color: var(--color-text);
     text-decoration: none;
     font-family: var(--font-body);
     font-size: 0.9rem;
@@ -4169,22 +4178,19 @@ body {
     content: '›';
     position: absolute;
     left: 0;
-    color: rgba(212, 175, 55, 0.7);
-    /* Oro brunito */
+    color: var(--color-solar-gold);
     font-size: 1.2rem;
     line-height: 0.8;
 }
 
 .footer-col ul li a:hover {
-    color: #D4AF37;
-    /* Oro brunito */
+    color: var(--color-sage-green);
     text-decoration: none;
     transform: translateX(3px);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(212, 175, 55, 0.3);
-    /* Oro brunito con trasparenza */
+    border-top: 1px solid var(--color-solar-gold);
     padding-top: 20px;
     margin-top: 20px;
     display: flex;
@@ -4196,13 +4202,11 @@ body {
 .footer-bottom p {
     font-family: var(--font-body);
     font-size: 0.9rem;
-    color: rgba(253, 248, 226, 0.8);
-    /* Crema chiaro con trasparenza */
+    color: var(--color-text-muted);
 }
 
 .footer-credits a {
-    color: #D4AF37;
-    /* Oro brunito */
+    color: var(--color-sage-green);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -4210,10 +4214,7 @@ body {
 
 .footer-credits a:hover {
     text-decoration: none;
-    color: #FDF8E2;
-    /* Crema chiaro al passaggio del mouse */
-    text-shadow: 0 0 3px rgba(212, 175, 55, 0.5);
-    /* Leggero bagliore oro */
+    color: var(--color-terracotta);
 }
 
 /* Media query per tablet e desktop */
@@ -4335,25 +4336,25 @@ body {
 
 .gallery-section {
     padding: 70px 0;
-    background-color: #f9f9f9;
+    background-color: var(--bg-cream);
     position: relative;
 }
 
 /* Stili per le pagine legali */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--text-dark) 100%);
-    color: var(--bg-cream);
+    background: var(--bg-cream);
+    color: var(--color-text);
     padding: 4rem 0 3rem;
     text-align: center;
-    margin-top: 100px;
-    /* Spazio per il floating nav */
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-solar-gold);
 }
 
 .page-header-content h1 {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--bg-cream);
+    color: var(--color-text);
 }
 
 .page-header-content p {
@@ -4361,6 +4362,7 @@ body {
     opacity: 0.9;
     max-width: 600px;
     margin: 0 auto;
+    color: var(--color-text-muted);
 }
 
 .page-content {
@@ -4375,19 +4377,19 @@ body {
 .legal-section {
     margin-bottom: 3rem;
     padding: 2rem;
-    background: var(--bg-cream);
+    background: var(--white);
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 4px 20px rgba(74, 70, 65, 0.06);
+    border-left: 4px solid var(--color-solar-gold);
 }
 
 .legal-section h2 {
-    color: var(--primary-color);
+    color: var(--color-text);
     font-family: var(--font-heading);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid rgba(172, 20, 10, 0.1);
+    border-bottom: 2px solid var(--color-solar-gold);
 }
 
 .legal-section h3 {
@@ -4398,7 +4400,7 @@ body {
 }
 
 .legal-section h4 {
-    color: var(--primary-color);
+    color: var(--color-text);
     font-family: var(--font-heading);
     font-size: 1.1rem;
     margin: 1rem 0 0.5rem 0;
@@ -4422,19 +4424,19 @@ body {
 }
 
 .legal-section strong {
-    color: var(--primary-color);
+    color: var(--color-text);
     font-weight: 600;
 }
 
 .legal-section a {
-    color: var(--primary-color);
+    color: var(--color-sage-green);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .legal-section a:hover {
-    color: var(--secondary-color);
+    color: var(--color-terracotta);
     text-decoration: underline;
 }
 
@@ -4510,7 +4512,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--text-dark) 100%);
+    background: linear-gradient(135deg, var(--color-terracotta) 0%, #D4957F 100%);
     color: var(--bg-cream);
     text-align: center;
     z-index: 10;
@@ -4586,7 +4588,7 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--text-dark) 100%);
+    background: linear-gradient(135deg, var(--color-terracotta) 0%, #D4957F 100%);
     color: var(--bg-cream);
     text-align: center;
     z-index: 20;
@@ -4656,7 +4658,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: #000;
+    background: var(--color-text);
 }
 
 /* Ottimizzazione mobile per video landscape */
@@ -4671,7 +4673,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #000;
+        background: var(--color-text);
         border: 3px solid red;
         /* Debug temporaneo */
         overflow: hidden;
@@ -4695,7 +4697,7 @@ body {
 /* Media query per orientamento landscape su mobile */
 @media (max-width: 768px) and (orientation: landscape) {
     .video-player.active {
-        background: #000;
+        background: var(--color-text);
     }
 
     #virtualTourVideo {
@@ -5006,7 +5008,7 @@ body {
     gap: 10px;
     padding: 14px 26px;
     border-radius: 50px;
-    background: linear-gradient(to right, var(--secondary-color), #dabb51);
+    background: linear-gradient(to right, var(--secondary-color), var(--color-solar-gold));
     color: var(--text-dark);
     text-decoration: none;
     font-weight: 700;
@@ -5176,7 +5178,7 @@ body {
 
 .pricing-header h2 {
     font-family: var(--font-heading);
-    color: var(--primary-color);
+    color: var(--color-text);
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -5392,7 +5394,7 @@ body {
     gap: 12px;
     cursor: pointer;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-light);
     line-height: 1.5;
     text-align: left;
 }
@@ -5647,7 +5649,7 @@ body {
 
 .lead-card {
     background: white;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-light);
     border-radius: 20px;
     padding: 2.5rem 2rem;
     text-align: center;
@@ -5707,7 +5709,7 @@ body {
 }
 
 .lead-card p {
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 2rem;
     font-size: 1rem;
     line-height: 1.6;
@@ -5723,7 +5725,7 @@ body {
 
 .simple-lead-form input {
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     border-radius: 8px;
     font-family: var(--font-body);
     font-size: 1rem;
@@ -5777,13 +5779,13 @@ body {
 .trust-note {
     display: block;
     font-size: 0.85rem;
-    color: #888;
+    color: var(--text-light);
     margin-top: auto;
     /* Push to bottom */
 }
 
 .trust-note i {
-    color: #28a745;
+    color: var(--color-sage-green);
     /* Green check */
     margin-right: 5px;
 }
@@ -5879,7 +5881,7 @@ body {
 
 .callback-box {
     background: white;
-    border: 2px solid #eee;
+    border: 2px solid var(--border-light);
     border-left: 5px solid var(--secondary-color);
     border-radius: 12px;
     padding: 1.5rem 2rem;
@@ -5918,7 +5920,7 @@ body {
 
 .callback-text p {
     margin-bottom: 0;
-    color: #666;
+    color: var(--text-light);
 }
 
 .callback-inline-form {
@@ -5928,24 +5930,28 @@ body {
 
 .callback-inline-form input {
     padding: 10px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     border-radius: 8px;
     width: 200px;
 }
 
 .btn-gold {
-    background: var(--secondary-color);
-    color: white;
+    background: var(--color-terracotta);
+    color: var(--color-cta-text);
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: var(--font-cta);
     cursor: pointer;
     transition: background 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-gold:hover {
-    background: #a08040;
+    background: var(--color-terracotta-dark);
+    color: var(--color-cta-text);
 }
 
 /* 3. Enhanced Visit Section */
@@ -5980,7 +5986,7 @@ body {
 }
 
 .v-feature i {
-    color: #28a745;
+    color: var(--color-sage-green);
 }
 
 .highlight-box {
@@ -6129,25 +6135,21 @@ body {
 
 /* Call Button */
 .pill-call {
-    background: var(--primary-color);
-    color: white;
+    background: var(--color-terracotta);
+    color: var(--color-cta-text);
     padding: 8px 16px;
     border-radius: 30px;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: var(--font-cta);
     font-size: 0.95rem;
     gap: 6px;
-    box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+    box-shadow: 0 4px 10px rgba(188, 107, 85, 0.25);
 }
 
-.pill-call i {
-    font-size: 1rem;
-}
-
-/* Divider */
 .pill-divider {
     width: 1px;
     height: 25px;
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--color-solar-gold);
 }
 
 /* Hide on Desktop */
@@ -6162,7 +6164,7 @@ body {
    ========================================= */
 .reviews-section {
     padding: 80px 0;
-    background-color: #fffbf0;
+    background-color: var(--bg-cream);
     /* Leggero crema */
     border-top: 1px solid rgba(197, 160, 89, 0.1);
 }
@@ -6213,14 +6215,14 @@ body {
 }
 
 .review-stars {
-    color: #FFD700;
+    color: var(--color-solar-gold);
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
 .review-text {
     font-style: italic;
-    color: #555;
+    color: var(--text-light);
     line-height: 1.6;
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
@@ -6255,7 +6257,7 @@ body {
 
 .author-info span {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--text-light);
 }
 
 /* Review Modal */
@@ -6318,7 +6320,7 @@ body {
 }
 
 .review-modal p {
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 1.5rem;
 }
 
@@ -6344,13 +6346,13 @@ body {
 .star-rating-input label:hover,
 .star-rating-input label:hover~label,
 .star-rating-input input:checked~label {
-    color: #FFD700;
+    color: var(--color-solar-gold);
 }
 
 .review-modal textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     border-radius: 8px;
     resize: vertical;
     font-family: inherit;
@@ -6360,10 +6362,10 @@ body {
 .review-modal select {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     border-radius: 8px;
     font-family: inherit;
-    color: #555;
+    color: var(--text-light);
     background-color: white;
 }
 
@@ -6397,7 +6399,7 @@ body {
 
 .difference-section {
     padding: 80px 0;
-    background: var(--white);
+    background: var(--bg-cream);
 }
 
 .difference-grid {
@@ -6408,22 +6410,24 @@ body {
 }
 
 .difference-card {
-    background: var(--bg-cream);
+    background: var(--white);
     padding: 2.5rem 2rem;
     border-radius: 12px;
     text-align: center;
-    border-top: 4px solid var(--secondary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--color-solar-gold);
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .difference-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 40px rgba(74, 70, 65, 0.08);
+    border-color: var(--color-sage-green);
 }
 
 .difference-card .card-icon-lg {
     font-size: 2.5rem;
-    color: var(--secondary-color);
+    color: var(--color-solar-gold);
     margin-bottom: 1.5rem;
 }
 
@@ -6431,7 +6435,7 @@ body {
     font-family: var(--font-heading);
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--color-text);
 }
 
 .services-included-section {
@@ -6493,7 +6497,7 @@ body {
 
 .house-section {
     padding: 80px 0;
-    background: var(--white);
+    background: var(--bg-cream);
 }
 
 .reviews-placeholder {
@@ -6627,6 +6631,199 @@ body {
     .location-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.pill-call i {
+    font-size: 1rem;
+}
+
+/* =========================================
+   Villa Sole Design System — Global Overrides
+   ========================================= */
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+}
+
+body {
+    color: var(--color-text);
+    background-color: var(--color-bg-cream);
+}
+
+a {
+    color: var(--color-sage-green);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-terracotta);
+}
+
+.page-content {
+    background-color: var(--bg-cream);
+}
+
+.page-header-content .back-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-header-content .back-link:hover {
+    color: var(--color-sage-green);
+}
+
+.legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+.legal-table th,
+.legal-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--border-light);
+    color: var(--color-text);
+}
+
+.legal-table thead tr {
+    background: var(--bg-cream);
+}
+
+.legal-table-compact th,
+.legal-table-compact td {
+    padding: 0.5rem;
+}
+
+.header-logo img,
+.footer-logo-img {
+    filter: none;
+}
+
+.pricing-card h3,
+.location-info-card h3,
+.faq-cta h3,
+.visit-text h2,
+.gallery-header h2 {
+    color: var(--color-text);
+}
+
+.pricing-card {
+    border: 1px solid var(--border-light);
+}
+
+.pricing-card:hover {
+    border-color: var(--color-sage-green);
+}
+
+.contact-form input,
+.contact-form textarea,
+.phone-form input,
+.phone-form textarea {
+    border: 1px solid var(--border-light);
+    color: var(--color-text);
+    font-family: var(--font-body);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.phone-form input:focus,
+.phone-form textarea:focus {
+    outline: none;
+    border-color: var(--color-sage-green);
+    box-shadow: 0 0 0 3px rgba(140, 178, 143, 0.2);
+}
+
+.checkbox-label a {
+    color: var(--color-sage-green);
+}
+
+.checkbox-label a:hover {
+    color: var(--color-terracotta);
+}
+
+.nav-link:hover {
+    color: var(--color-solar-gold);
+}
+
+.nav-contact a:hover {
+    color: var(--color-solar-gold);
+}
+
+.gallery-section {
+    background-color: var(--bg-cream);
+}
+
+.services-features,
+.schedule-revamp {
+    background-color: var(--bg-cream);
+}
+
+.enhanced-visit {
+    background: var(--bg-cream);
+}
+
+.highlight-box {
+    border: 1px solid var(--border-light);
+}
+
+.v-feature i {
+    color: var(--color-sage-green);
+}
+
+.reviews-placeholder-box {
+    border: 2px dashed rgba(237, 199, 94, 0.5);
+}
+
+.feature-text h3,
+.schedule-card .card-info h3,
+.services-extra-box h3,
+.pricing-card h3,
+.range-box h3,
+.section-title,
+.gallery-header h2,
+.feature-text h3,
+.callback-text h3,
+.visit-text h2 {
+    color: var(--color-text);
+}
+
+.hero h1,
+.hero h2 {
+    color: var(--color-cta-text);
+}
+
+.nav-overlay .nav-link {
+    color: rgba(250, 246, 233, 0.85);
+}
+
+.nav-contact a {
+    color: var(--color-cta-text);
+}
+
+.loading-content h3,
+.orientation-content h3 {
+    color: var(--color-cta-text);
+}
+
+.footer-col ul li a,
+.footer-info p,
+.footer-bottom p {
+    color: var(--color-text);
+}
+
+.cta-button,
+.cta-button:hover,
+.btn-call,
+.btn-call:hover,
+.btn-gold,
+.btn-gold:hover,
+.btn-whatsapp,
+.btn-whatsapp:hover,
+.pill-call {
+    color: var(--color-cta-text);
 }
 
 @media (max-width: 768px) {
