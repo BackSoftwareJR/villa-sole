@@ -1,0 +1,64 @@
+
+<!-- hyper-orchestrator-learned-patterns -->
+
+# HyperOrchestrator Learned Patterns
+
+<!-- DO NOT EDIT BELOW — managed by HyperOrchestrator -->
+
+**Current task context:** togliamo le scritte rsa ma parliamo di grandi strutture al posto di rsa inotre quando aggiorno la pagina deve riportarmi in cima
+
+## Global Patterns (cross-project)
+
+### Pattern 1 (relevance: 5%)
+
+**When you see:**
+```
+Command: npm run test
+Exit: non-zero
+
+> template-case-famiglia@1.0.0 test
+> npm run lint && npm run build
+
+
+> template-case-famiglia@1.0.0 lint
+> eslint .
+
+/workspace/node_modules/eslint/bin/eslint.js:15
+mod.enableCompileCache?.();
+                       ^
+
+SyntaxError: Unexpected token '.'
+    at wrapSafe (internal/modules/cjs/loader.js:915:16)
+    at Module._compile (internal/modules/cjs/loader.js:963:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)
+    at internal/main/run_main_module.js:17:47
+```
+
+**Try this approach:**
+```
+Resolved after 4 failed attempt(s)
+```
+
+_From task: Modify the contacts page in the 'where we are' section by removing the image at the bottom with the white warehouse, then adjust the maps container to be taller so it is parallel with the container holding the address information. | Failures before success: 4_
+
+### Pattern 2
+
+**When you see:**
+```
+Command: npm run test
+Exit: non-zero
+
+(…truncated to last 12000 chars)
+elpDisplayed","(outputHelp)")}}}function incrementNodeInspectorPort(t){return t.map((t=>{if(!t.startsWith("--inspect")){return t}let e;let i="127.0.0.1";let n="9229";let s;if((s=t.match(/^(--inspect(-brk)?)$/))!==null){e=s[1]}else if((s=t.match(/^(--inspect(-brk|-port)?)=([^:]+)$/))!==null){e=s[1];if(/^\d+$/.test(s[3])){n=s[3]}else{i=s[3]}}else if((s=t.match(/^(--inspect(-brk|-port)?)=([^:]+):(\d+)$/))!==null){e=s[1];i=s[3];n=s[4]}if(e&&n!=="0"){return`${e}=${i}:${parseInt(n)+1}`}return t}))}e.Command=Command},854:(t,e)=>{class CommanderError extends Error{constructor(t,e,i){super(i);Error.captureStackTrace(this,this.constructor);this.name=this.constructor.name;this.code=e;this.exitCode=t;this.nestedError=undefined}}class InvalidArgumentError extends CommanderError{constructor(t){super(1,"commander.invalidArgument",t);Error.captureStackTrace(this,this.constructor);this.name=this.constructor.name}}e.CommanderError=CommanderError;e.InvalidArgumentError=InvalidArgumentError},853:(t,e,i)=>{const{humanReadableArgName:n}=i(161);class Help{constructor(){this.helpWidth=undefined;this.sortSubcommands=false;this.sortOptions=false;this.showGlobalOptions=false}visibleCommands(t){const e=t.commands.filter((t=>!t._hidden));const i=t._getHelpCommand();if(i&&!i._hidden){e.push(i)}if(this.sortSubcommands){e.sort(((t,e)=>t.name().localeCompare(e.name())))}return e}compareOptions(t,e){const getSortKey=t=>t.short?t.short.repl
+```
+
+**Try this approach:**
+```
+Resolved after 3 failed attempt(s)
+```
+
+_From task: Completely redesign the footer with a white background, ensuring all elements are clearly visible. Create a modern, intuitive, and well-studied layout. Replace the current background with a new one that is visually appealing and easy to navigate. | Failures before success: 3_
+
