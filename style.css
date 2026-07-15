@@ -35,6 +35,16 @@
     --font-heading: 'Lora', serif;
     --font-body: 'Lato', sans-serif;
     --font-cta: 'Lato', sans-serif;
+
+    /* Restyling premium — tipografia di fascia alta */
+    --font-display: 'Fraunces', 'Lora', serif;
+    --font-sans: 'Manrope', 'Lato', sans-serif;
+
+    /* Glassmorphism tokens */
+    --glass-bg: rgba(255, 253, 246, 0.10);
+    --glass-bg-strong: rgba(255, 253, 246, 0.16);
+    --glass-border: rgba(255, 255, 255, 0.22);
+    --glass-shadow: 0 24px 60px rgba(30, 25, 20, 0.35);
 }
 
 /* Reset e base */
@@ -609,24 +619,23 @@ video {
     background: var(--secondary-color);
 }
 
-/* Hero Section - Carosello */
+/* ============================================================
+   HERO — Restyling premium: cinematico + glassmorphism
+   ============================================================ */
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
     overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 /* Carosello Hero */
 .hero-carousel {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: 0;
 }
 
@@ -639,29 +648,28 @@ video {
 
 .hero-slide {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    animation: kenBurns 20s infinite alternate;
+    transition: opacity 1.8s ease-in-out;
+    animation: kenBurns 24s infinite alternate ease-in-out;
+    animation-play-state: paused;
 }
 
 .hero-slide.active {
     opacity: 1;
+    animation-play-state: running;
 }
 
+/* Scrim cinematico: vignetta laterale + gradiente dal basso */
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(74, 70, 65, 0.75) 0%, rgba(74, 70, 65, 0.35) 50%, rgba(74, 70, 65, 0.15) 100%);
+    inset: 0;
+    background:
+        linear-gradient(to top, rgba(30, 25, 20, 0.72) 0%, rgba(30, 25, 20, 0.28) 45%, rgba(30, 25, 20, 0.05) 75%),
+        linear-gradient(105deg, rgba(30, 25, 20, 0.45) 0%, rgba(30, 25, 20, 0.12) 45%, transparent 70%);
     z-index: 1;
 }
 
@@ -672,107 +680,278 @@ video {
     }
 
     100% {
-        transform: scale(1.15);
+        transform: scale(1.12);
     }
 }
 
-/* Indicatori Hero */
+/* Indicatori Hero — barre di progresso minimali */
 .hero-indicators {
     position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 36px;
+    right: max(32px, calc((100vw - 1280px) / 2 + 32px));
     display: flex;
-    gap: 12px;
+    gap: 8px;
     z-index: 10;
 }
 
 .hero-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
+    width: 34px;
+    height: 4px;
+    border-radius: 99px;
+    background-color: rgba(255, 255, 255, 0.35);
     cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: background-color 0.35s ease, width 0.35s ease;
+    border: none;
 }
 
 .hero-indicator.active {
-    background-color: var(--primary-color);
-    transform: scale(1.3);
-    border-color: var(--primary-color);
+    width: 56px;
+    background-color: var(--color-solar-gold);
 }
 
 .hero-indicator:hover {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
-/* Controlli navigazione Hero rimossi */
+.hero-indicator.active:hover {
+    background-color: var(--color-solar-gold);
+}
 
-/* Contenuto Hero - Cinematic */
+/* Contenuto Hero — allineato in basso a sinistra, storytelling */
 .hero-content {
-    position: absolute;
-    bottom: 80px;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-    text-align: center;
-    padding: 2rem;
-    background: none;
-    backdrop-filter: none;
-    border: none;
-    box-shadow: none;
-    animation: fadeInUp 1.2s ease-out;
-}
-
-/* Tipografia Hero Section */
-.hero h1 {
-    font-family: var(--font-heading);
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-    color: var(--white);
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: relative;
-    padding-bottom: 0;
-    letter-spacing: -0.02em;
+    z-index: 2;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 120px 32px 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.75rem;
+    animation: heroRise 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.hero h1::after {
-    display: none;
-    /* Rimuovi la linea decorativa per un look più pulito */
+/* Pannello glass — Apple HIG style */
+.hero-glass-panel {
+    max-width: 660px;
+    padding: 2.5rem 2.75rem;
+    border-radius: 32px;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(26px) saturate(160%);
+    backdrop-filter: blur(26px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.hero .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 253, 246, 0.92);
+    margin-bottom: 1.25rem;
+}
+
+.hero-eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-solar-gold);
+    box-shadow: 0 0 12px rgba(237, 199, 94, 0.8);
+    flex-shrink: 0;
+}
+
+/* Tipografia Hero */
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+    text-shadow: 0 2px 24px rgba(30, 25, 20, 0.35);
+}
+
+.hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-solar-gold);
 }
 
 .hero h2,
 .hero-subtitle {
-    font-family: var(--font-body);
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: var(--font-sans);
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    font-weight: 500;
+    line-height: 1.65;
+    color: rgba(255, 253, 246, 0.88);
+    max-width: 54ch;
+    margin-bottom: 2rem;
 }
 
-.hero-text-link {
-    margin-top: 1.25rem;
+.hero-cta-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.hero-text-link a {
-    color: rgba(255, 255, 255, 0.85);
+/* CTA secondaria "ghost" */
+.hero-cta-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
     font-size: 0.95rem;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    transition: color 0.2s ease;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: rgba(255, 253, 246, 0.92);
+    text-decoration: none;
+    transition: color 0.25s ease;
 }
 
-.hero-text-link a:hover {
+.hero-cta-ghost-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    font-size: 0.85rem;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-cta-ghost:hover {
     color: var(--color-solar-gold);
+}
+
+.hero-cta-ghost:hover .hero-cta-ghost-arrow {
+    transform: translateY(4px);
+    background: rgba(237, 199, 94, 0.18);
+    border-color: var(--color-solar-gold);
+}
+
+/* Barra statistiche glass */
+.hero-stats-bar {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 0;
+    border-radius: 22px;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    backdrop-filter: blur(22px) saturate(150%);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 16px 40px rgba(30, 25, 20, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 1.1rem 1.9rem;
+    position: relative;
+}
+
+.hero-stat + .hero-stat::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 22%;
+    bottom: 22%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.hero-stat-value {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--color-solar-gold);
+}
+
+.hero-stat-label {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 253, 246, 0.82);
+}
+
+/* Invito allo scroll */
+.hero-scroll-cue {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    width: 44px;
+    height: 72px;
+}
+
+.hero-scroll-cue-line {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.85));
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-scroll-cue-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -40%;
+    width: 100%;
+    height: 40%;
+    background: var(--color-solar-gold);
+    animation: scrollCue 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollCue {
+    0% {
+        top: -40%;
+    }
+
+    100% {
+        top: 110%;
+    }
+}
+
+@keyframes heroRise {
+    from {
+        opacity: 0;
+        transform: translateY(36px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-slide,
+    .hero-content,
+    .hero-scroll-cue-line::after {
+        animation: none;
+    }
 }
 
 /* Bottone CTA */
@@ -898,50 +1077,55 @@ video {
 }
 
 /* Media queries per responsive design */
-@media screen and (min-width: 768px) {
-    .hero-content {
-        bottom: 100px;
-        padding: 0 1.5rem;
+@media screen and (max-width: 900px) {
+    .hero-indicators {
+        right: auto;
+        left: 32px;
+        bottom: 28px;
     }
 
-    .hero h1 {
-        font-size: 5rem;
-        margin-bottom: 1.5rem;
+    .hero-stats-bar {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
     }
 
-    .hero h2,
-    .hero-subtitle {
-        font-size: 1.8rem;
-        margin-bottom: 3rem;
-    }
-
-    .hero-cta-group {
-        flex-direction: row;
+    .hero-stat {
+        padding: 1rem 1.1rem;
+        flex: 1;
     }
 }
 
 @media screen and (max-width: 480px) {
     .hero-content {
-        bottom: 60px;
-        padding: 1.5rem;
-        width: 100%;
+        padding: 110px 20px 88px;
+        gap: 1.25rem;
     }
 
-    .hero h1 {
-        font-size: 2.8rem;
-        margin-bottom: 1rem;
+    .hero-glass-panel {
+        padding: 1.75rem 1.5rem;
+        border-radius: 26px;
+    }
+
+    .hero .hero-eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 0.16em;
     }
 
     .hero h2,
     .hero-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        line-height: 1.4;
+        margin-bottom: 1.6rem;
     }
 
     .hero-cta-group {
         flex-direction: column;
+        align-items: stretch;
         width: 100%;
+        gap: 1.1rem;
+    }
+
+    .hero-cta-ghost {
+        justify-content: center;
     }
 
     .cta-button {
@@ -953,22 +1137,21 @@ video {
         display: none !important;
     }
 
-    .hero-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+    .hero-stat-value {
+        font-size: 1.35rem;
     }
 
-    .hero-nav.prev {
-        left: 10px;
-    }
-
-    .hero-nav.next {
-        right: 10px;
+    .hero-stat-label {
+        font-size: 0.62rem;
     }
 
     .hero-indicators {
+        left: 20px;
         bottom: 20px;
+    }
+
+    .hero-scroll-cue {
+        display: none;
     }
 }
 
@@ -7555,4 +7738,546 @@ button.cta-button {
         padding-right: 1.25rem;
         max-width: 100%;
     }
+}
+
+/* ============================================================
+   VIENI A TROVARCI — hub contatti immersivo (restyling premium)
+   ============================================================ */
+.visit-hub {
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+    background: none;
+}
+
+.visit-hub-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/gallery/villa-sole-terrazza-ospiti-rilassati.webp');
+    background-size: cover;
+    background-position: center 35%;
+    z-index: 0;
+}
+
+.visit-hub-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom, rgba(30, 25, 20, 0.62) 0%, rgba(30, 25, 20, 0.45) 50%, rgba(30, 25, 20, 0.68) 100%);
+}
+
+.visit-hub .container {
+    position: relative;
+    z-index: 1;
+}
+
+.visit-hub-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.visit-hub-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 253, 246, 0.9);
+    margin-bottom: 1.25rem;
+}
+
+.visit-hub-intro h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+}
+
+.visit-hub-lead {
+    font-family: var(--font-sans);
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: rgba(255, 253, 246, 0.88);
+    max-width: 46ch;
+}
+
+/* Canali di contatto — card glass */
+.visit-hub-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.visit-channel {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 22px;
+    background: var(--glass-bg-strong);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 12px 36px rgba(30, 25, 20, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    text-decoration: none;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.35s ease, border-color 0.35s ease;
+}
+
+a.visit-channel:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 253, 246, 0.24);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.visit-channel-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    flex-shrink: 0;
+    font-size: 1.3rem;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.visit-channel-whatsapp .visit-channel-icon {
+    background: rgba(37, 211, 102, 0.25);
+    border-color: rgba(37, 211, 102, 0.45);
+    color: #7bf2ae;
+}
+
+.visit-channel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.visit-channel-body strong {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.visit-channel-detail {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-solar-gold);
+}
+
+.visit-channel-hint {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(255, 253, 246, 0.75);
+}
+
+.visit-channel-arrow {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    font-size: 1rem;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+a.visit-channel:hover .visit-channel-arrow,
+.visit-channel-maps:hover {
+    transform: translateX(4px);
+    background: rgba(237, 199, 94, 0.25);
+    border-color: var(--color-solar-gold);
+}
+
+@media screen and (max-width: 900px) {
+    .visit-hub {
+        padding: 80px 0;
+    }
+
+    .visit-hub-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .visit-channel {
+        padding: 1.1rem 1.15rem;
+        gap: 0.9rem;
+        border-radius: 18px;
+    }
+
+    .visit-channel-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 13px;
+        font-size: 1.1rem;
+    }
+
+    .visit-channel-detail {
+        font-size: 0.88rem;
+    }
+}
+
+/* ============================================================
+   RESTYLING PREMIUM — layer globale sezioni
+   ============================================================ */
+
+/* Tipografia di sezione: serif di fascia alta + sans pulito */
+.section-title-revamp,
+.gallery-header h2,
+.pricing-header h2,
+.faq-header h2,
+.contact-info h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    font-size: clamp(2.1rem, 3.4vw, 3rem);
+    line-height: 1.12;
+    color: var(--color-text);
+}
+
+.section-subtitle-revamp,
+.gallery-header p,
+.pricing-header p,
+.faq-header p {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.section-header .section-subtitle-revamp {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-body-text p,
+.problema-card p,
+.cosa-card p,
+.difference-card p {
+    font-family: var(--font-sans);
+}
+
+/* Card fluttuanti: via i bordi rigidi, ombre morbide e diffuse */
+.cosa-card,
+.difference-card,
+.schedule-card,
+.service-included-item,
+.pricing-card,
+.testimonial-card,
+.location-info-card {
+    border: none;
+    border-radius: 24px;
+    background: var(--white);
+    box-shadow: 0 2px 6px rgba(74, 70, 65, 0.04), 0 18px 44px rgba(74, 70, 65, 0.08);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+}
+
+.cosa-card:hover,
+.difference-card:hover,
+.schedule-card:hover,
+.pricing-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 10px rgba(74, 70, 65, 0.05), 0 28px 60px rgba(74, 70, 65, 0.13);
+    border: none;
+}
+
+.schedule-card {
+    border-left: none;
+}
+
+.testimonial-card {
+    background-image: none;
+    border-left: none;
+}
+
+/* Chips servizi inclusi: più ariosi */
+.service-included-item {
+    border-radius: 18px;
+    padding: 1.25rem 1.4rem;
+    align-items: center;
+}
+
+.service-included-item span {
+    font-family: var(--font-sans);
+    font-weight: 600;
+}
+
+.services-extra-box {
+    border-left: none;
+    border-radius: 24px;
+    background: var(--white);
+    box-shadow: 0 2px 6px rgba(74, 70, 65, 0.04), 0 18px 44px rgba(74, 70, 65, 0.08);
+    padding: 2.5rem;
+}
+
+.services-extra-list span {
+    font-family: var(--font-sans);
+}
+
+/* Immagine "chi siamo": angoli generosi + badge glass */
+.about-image-col .image-wrapper {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(74, 70, 65, 0.18);
+}
+
+.about-image-col .image-wrapper img {
+    display: block;
+    border-radius: 28px;
+}
+
+.image-glass-badge {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0.9rem 1.25rem;
+    border-radius: 18px;
+    background: rgba(30, 25, 20, 0.35);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    backdrop-filter: blur(18px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    max-width: calc(100% - 36px);
+}
+
+.image-glass-badge-value {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-solar-gold);
+    line-height: 1.2;
+}
+
+.image-glass-badge-label {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255, 253, 246, 0.92);
+}
+
+/* ============================================================
+   LA CASA — fascia immersiva
+   ============================================================ */
+.house-immersive {
+    position: relative;
+    padding: 130px 0;
+    overflow: hidden;
+    background: none;
+}
+
+.house-immersive-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/gallery/villa-sole-balcone-murale-sole.webp');
+    background-size: cover;
+    background-position: center 40%;
+}
+
+.house-immersive-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(30, 25, 20, 0.55) 0%, rgba(30, 25, 20, 0.25) 55%, rgba(30, 25, 20, 0.1) 100%);
+}
+
+.house-immersive .container {
+    position: relative;
+    z-index: 1;
+}
+
+.house-immersive-content {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.house-glass-panel {
+    max-width: 620px;
+    padding: 2.75rem 3rem;
+    border-radius: 32px;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(26px) saturate(160%);
+    backdrop-filter: blur(26px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.house-glass-panel h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.2vw, 2.9rem);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+}
+
+.house-glass-panel p {
+    font-family: var(--font-sans);
+    font-size: 1.02rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: rgba(255, 253, 246, 0.88);
+    margin-bottom: 1rem;
+}
+
+.house-glass-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.house-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.55rem 1.1rem;
+    border-radius: 99px;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.house-chip i {
+    color: var(--color-solar-gold);
+}
+
+/* ============================================================
+   Statistiche, gallery, pricing, FAQ — rifiniture
+   ============================================================ */
+.stat-number {
+    font-family: var(--font-display);
+    font-weight: 600;
+}
+
+.stat-label {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.gallery-img,
+.gallery-grid-item img {
+    border-radius: 20px;
+}
+
+.gallery-grid-item {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(74, 70, 65, 0.1);
+}
+
+.pricing-card {
+    backdrop-filter: none;
+}
+
+.pricing-card h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+}
+
+.faq-question {
+    font-family: var(--font-sans);
+    font-weight: 700;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(140, 178, 143, 0.35);
+}
+
+.quote-box-simple {
+    border: none;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: 0 2px 6px rgba(74, 70, 65, 0.04), 0 18px 44px rgba(74, 70, 65, 0.08);
+    padding: 2.5rem 3rem;
+}
+
+.contact-photo img {
+    border-radius: 28px;
+}
+
+.map-container iframe {
+    border-radius: 24px;
+}
+
+/* Responsive fascia immersiva */
+@media screen and (max-width: 900px) {
+    .house-immersive {
+        padding: 90px 0;
+    }
+
+    .house-immersive-bg {
+        background-attachment: scroll;
+    }
+
+    .house-glass-panel {
+        padding: 2rem 1.75rem;
+    }
+}
+
+/* Rifiniture contatti e footer */
+.contact-photo {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(74, 70, 65, 0.16);
+}
+
+.contact-photo-caption {
+    background: linear-gradient(to top, rgba(30, 25, 20, 0.72), rgba(30, 25, 20, 0));
+    padding: 40px 24px 20px;
+}
+
+.contact-photo-caption p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    color: rgba(255, 253, 246, 0.96);
+    text-shadow: 0 2px 12px rgba(30, 25, 20, 0.45);
+}
+
+.contact-map-section .section-subtitle-revamp {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
 }
