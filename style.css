@@ -5103,6 +5103,63 @@ body {
     }
 }
 
+/* Griglia galleria completa */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.gallery-grid-item {
+    margin: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid rgba(140, 178, 143, 0.25);
+    box-shadow: 0 4px 16px rgba(74, 70, 65, 0.06);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-grid-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-sage-green);
+    box-shadow: 0 8px 24px rgba(74, 70, 65, 0.1);
+}
+
+.gallery-grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-grid-item figcaption {
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    border-top: 1px solid rgba(237, 199, 94, 0.35);
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .gallery-grid-item img {
+        height: 140px;
+    }
+
+    .gallery-grid-item figcaption {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+}
+
 /* CTA per visita virtuale */
 .gallery-cta {
     margin-top: 2rem;
@@ -7262,5 +7319,58 @@ button.cta-button {
 @media (max-width: 768px) {
     .header-logo img {
         height: 45px;
+    }
+}
+/* ============================================================
+   BREADCRUMB NAV — SEO + accessibilità
+   ============================================================ */
+.breadcrumb-nav {
+    background: var(--color-bg-cream);
+    border-bottom: 1px solid rgba(237, 199, 94, 0.3);
+    padding: 0.6rem 0;
+    position: relative;
+    z-index: 5;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li + li::before {
+    content: "›";
+    margin: 0 0.4rem;
+    color: var(--color-solar-gold);
+}
+
+.breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--color-terracotta);
+}
+
+.breadcrumb li[aria-current="page"] span {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-nav {
+        display: none;
     }
 }

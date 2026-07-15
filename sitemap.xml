@@ -1,27 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ================================================
+       Homepage (priorità massima + image sitemap)
+       ================================================ -->
   <url>
-    <loc>https://www.villasole.it/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.casafamigliavillasole.it/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-balcone-murale-sole.webp</image:loc>
+      <image:caption>Ingresso di Casa Famiglia Villa Sole con murale del sole - Roasio (VC)</image:caption>
+      <image:title>Casa Famiglia Villa Sole – Roasio</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-team-tre-donne.webp</image:loc>
+      <image:caption>Il team accogliente di Villa Sole - Casa Famiglia per anziani a Roasio</image:caption>
+      <image:title>Il team di Villa Sole</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-camera-matrimoniale-quadretti-azzurri.webp</image:loc>
+      <image:caption>Camera matrimoniale con letto a quadretti azzurri e plaid verde - Villa Sole Casa Famiglia Roasio</image:caption>
+      <image:title>Camera matrimoniale con letto a quadretti azzurri e plaid verde</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-terrazza-seduta-esterno.webp</image:loc>
+      <image:caption>Terrazza esterna con seduta in vimini e fiori - Villa Sole Roasio</image:caption>
+      <image:title>Terrazza esterna con seduta in vimini e fiori</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-balcone-dondolo-relax.webp</image:loc>
+      <image:caption>Balcone con dondolo e area relax - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Balcone con dondolo e area relax</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-dettaglio-ortensie-candela.webp</image:loc>
+      <image:caption>Dettaglio decorativo con ortensie e candela in ambiente accogliente - Villa Sole</image:caption>
+      <image:title>Dettaglio decorativo con ortensie e candela in ambiente accogliente</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-camera-doppia-letti-colorati.webp</image:loc>
+      <image:caption>Camera doppia con due letti singoli rosso e blu - Villa Sole Roasio</image:caption>
+      <image:title>Camera doppia con due letti singoli rosso e blu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-camera-luminosa-parquet.webp</image:loc>
+      <image:caption>Camera luminosa con parquet e tende in pizzo - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Camera luminosa con parquet e tende in pizzo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-bagno-doccia-accessibile.webp</image:loc>
+      <image:caption>Bagno con doccia accessibile e maniglioni di sicurezza - Villa Sole Roasio</image:caption>
+      <image:title>Bagno con doccia accessibile e maniglioni di sicurezza</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-bagno-doccia-maniglioni.webp</image:loc>
+      <image:caption>Doccia a piatto doccia con maniglioni per accessibilità - Villa Sole</image:caption>
+      <image:title>Doccia a piatto doccia con maniglioni per accessibilità</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-camera-doppia-comodini.webp</image:loc>
+      <image:caption>Camera doppia con comodini e abat-jour - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Camera doppia con comodini e abat-jour</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-camera-armadio-blu.webp</image:loc>
+      <image:caption>Camera con armadio bianco e letto blu - Villa Sole Roasio</image:caption>
+      <image:title>Camera con armadio bianco e letto blu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-montascale-accessibilita.webp</image:loc>
+      <image:caption>Montascale per accessibilità negli spazi interni - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Montascale per accessibilità negli spazi interni</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-colazione-cucina-girasoli.webp</image:loc>
+      <image:caption>Colazione in cucina con cornetti e tende a girasole - Villa Sole Roasio</image:caption>
+      <image:title>Colazione in cucina con cornetti e tende a girasole</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-balcone-murale-sole.webp</image:loc>
+      <image:caption>Balcone con murale del sole dipinto e fiori - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Balcone con murale del sole dipinto e fiori</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-ingresso-balcone-sole.webp</image:loc>
+      <image:caption>Ingresso e balcone con decorazione solare - Villa Sole Roasio</image:caption>
+      <image:title>Ingresso e balcone con decorazione solare</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-soggiorno-divano-pianta.webp</image:loc>
+      <image:caption>Soggiorno accogliente con divano e pianta - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Soggiorno accogliente con divano e pianta</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-sala-pranzo-girasoli.webp</image:loc>
+      <image:caption>Sala da pranzo con tovaglia a girasoli e ortensie - Villa Sole Roasio</image:caption>
+      <image:title>Sala da pranzo con tovaglia a girasoli e ortensie</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-soggiorno-ambiente-accogliente.webp</image:loc>
+      <image:caption>Soggiorno luminoso con divano e quadro - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Soggiorno luminoso con divano e quadro</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-soggiorno-quadro-tv.webp</image:loc>
+      <image:caption>Zona soggiorno con TV e arredi classici - Villa Sole Roasio</image:caption>
+      <image:title>Zona soggiorno con TV e arredi classici</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-soggiorno-vista-completa.webp</image:loc>
+      <image:caption>Vista completa del soggiorno con divano e tavolino - Villa Sole</image:caption>
+      <image:title>Vista completa del soggiorno con divano e tavolino</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-team-staff-due-persone.webp</image:loc>
+      <image:caption>Il team di Villa Sole davanti al murale del sole - Casa Famiglia Roasio</image:caption>
+      <image:title>Il team di Villa Sole davanti al murale del sole</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-team-murale-villa-sole.webp</image:loc>
+      <image:caption>Staff Villa Sole accanto al murale Villa Sole - Roasio</image:caption>
+      <image:title>Staff Villa Sole accanto al murale Villa Sole</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-team-tre-donne.webp</image:loc>
+      <image:caption>Il team accogliente di Villa Sole - Casa Famiglia per anziani a Roasio</image:caption>
+      <image:title>Il team accogliente di Villa Sole</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-momenti-conviviali-colazione.webp</image:loc>
+      <image:caption>Momenti conviviali a colazione tra ospiti e staff - Villa Sole</image:caption>
+      <image:title>Momenti conviviali a colazione tra ospiti e staff</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-ospite-colazione-tazza.webp</image:loc>
+      <image:caption>Ospite durante la colazione in ambiente familiare - Villa Sole Roasio</image:caption>
+      <image:title>Ospite durante la colazione in ambiente familiare</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-assistenza-colazione-affettuosa.webp</image:loc>
+      <image:caption>Assistenza affettuosa durante la colazione - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Assistenza affettuosa durante la colazione</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-gruppo-colazione-cucina.webp</image:loc>
+      <image:caption>Gruppo a colazione in cucina - convivialità a Villa Sole Roasio</image:caption>
+      <image:title>Gruppo a colazione in cucina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-assistenza-personale-ospite.webp</image:loc>
+      <image:caption>Assistenza personale e vicinanza all'ospite - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Assistenza personale e vicinanza all'ospite</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-terrazza-ospiti-rilassati.webp</image:loc>
+      <image:caption>Ospiti rilassati sulla terrazza con dondolo - Villa Sole Roasio</image:caption>
+      <image:title>Ospiti rilassati sulla terrazza con dondolo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-pranzo-estivo-tavola.webp</image:loc>
+      <image:caption>Tavola imbandita per pranzo estivo italiano - Villa Sole Casa Famiglia</image:caption>
+      <image:title>Tavola imbandita per pranzo estivo italiano</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-pranzo-buffet-italiano.webp</image:loc>
+      <image:caption>Buffet italiano con caprese, tiramisù e insalate - Villa Sole Roasio</image:caption>
+      <image:title>Buffet italiano con caprese, tiramisù e insalate</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-pranzo-festoso-vista-alto.webp</image:loc>
+      <image:caption>Pranzo festoso con piatti tradizionali visto dall'alto - Villa Sole</image:caption>
+      <image:title>Pranzo festoso con piatti tradizionali visto dall'alto</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.casafamigliavillasole.it/images/gallery/villa-sole-pranzo-caprese-tiramisu.webp</image:loc>
+      <image:caption>Pranzo con caprese, tiramisù e anguria - Villa Sole Casa Famiglia Roasio</image:caption>
+      <image:title>Pranzo con caprese, tiramisù e anguria</image:title>
+    </image:image>
+  </url>
+
+  <!-- ================================================
+       Pagine legali
+       ================================================ -->
+  <url>
+    <loc>https://www.casafamigliavillasole.it/privacy-policy.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.villasole.it/privacy-policy.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.casafamigliavillasole.it/cookie-policy.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.villasole.it/cookie-policy.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.casafamigliavillasole.it/termini-condizioni.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
-  <url>
-    <loc>https://www.villasole.it/termini-condizioni.html</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
+
 </urlset>
